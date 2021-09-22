@@ -92,5 +92,3 @@ def generate_data(con):
     sql_data = sql_fetch(con)
     for i in range(len(sql_data)):
         es.index(index='index', id=sql_data[i][0], body={'text': sql_data[i][2]})
-
-app.run(port=5000, debug=True)
